@@ -138,7 +138,6 @@
                 //reset the game
                 dead = false;
                 platforms.visible = true;
-                console.log('reset');
                 health = 100;
                 resetButton.visible = false;
                 stateText.visible = false;
@@ -230,7 +229,6 @@
 
             function healthDecay() {
                 health -= 5;
-                console.log('Decay: ' + health);
             }
 
             function greenSpawn() {
@@ -402,9 +400,7 @@
                 score += 1;
                 if (health < 100 && health > 1) {
                     health += (star.scale.x * 3);
-                    console.log('Scale: ' + (star.scale.x * 3));
                 }
-                console.log('Touched star: ' + health);
                 scoreText.text = score;
             }
 
@@ -445,10 +441,9 @@
                         greenSpriteTimer.visible = false;
                     }
                 }
-            } console.log(player.position.y);
+            } 
 
             function touchBomb(player, bomb) {
-                console.log(health);
                 bomb.kill();
                 boom.play();
                 //camera & flash
